@@ -1,0 +1,102 @@
+%%
+% The BIThesis Template for Bachelor Graduation Thesis
+%
+% 北京理工大学毕业设计（论文）中英文摘要 —— 使用 XeLaTeX 编译
+%
+% Copyright 2020 Spencer Woo
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is Spencer Woo.
+
+% 中英文摘要章节
+\topskip=0pt
+\zihao{-4}
+
+\vspace*{-7mm}
+
+\begin{center}
+  \heiti\zihao{-2}\textbf{\thesisTitle}
+\end{center}
+
+\vspace*{2mm}
+
+\addcontentsline{toc}{chapter}{摘~~~~要}
+{\let\clearpage\relax \chapter*{\textmd{摘~~~~要}}}
+\setcounter{page}{1}
+
+\vspace*{1mm}
+
+\setstretch{1.53}
+\setlength{\parskip}{0em}
+
+% 中文摘要正文从这里开始
+利用仿生机器人与生物开展行为交互实验，揭示生物的行为生成机制和研究仿生机器人的控制策略是智能机器人和生物学领域的热点之一。仿生机器鼠模仿生物鼠结构设计，能够引发生物鼠的特定反应，二者交互研究受到研究人员的广泛关注。当前利用仿生机器鼠行为交互主要分为示教实验和社交反应测试两类，示教实验中交互策略存在动作模式单一问题，社交反应测试中仿生机器鼠行为生成普遍缺乏生物特性。
+
+首先，根据生物鼠动作特点及仿生机器鼠结构特性，提出了前进、后退、左转、右转、梳理、被梳理、攀爬和匍匐共8种基本动作的规划方法，解决了示教实验中动作模式单一的问题。
+
+其次，设计并搭建了用于开展仿生机器鼠行为交互的仿真平台，该平台分为关节控制、动作执行和行为生成三个层次，各层之间相互解耦，可扩展性强，具备模拟多机器鼠在实验场景中行为交互的能力。
+
+最后，在仿真平台中，设定强化学习控制的仿生机器鼠为学习鼠，预设规则控制的仿生机器鼠为规则鼠，利用Q-学习算法训练学习鼠适应规则鼠行为的行为模式，产生与规则鼠匹配的动作序列，实现了生物鼠行为交互过程中接近与跟随特性的模拟，增强了仿生机器鼠行为生成的生物特性。
+
+%利用仿生机器人与生物开展行为交互实验，揭示生物的行为生成机制和研究仿生机器人的控制策略是智能机器人和生物学领域的热点之一。生物鼠作为一种典型的模式动物，对其行为交互的研究受到仿生机器鼠开发者的广泛关注。当前研究者开展的仿生机器鼠行为交互实验主要为示教实验和社交反应测试两类，在示教实验中仿生机器鼠的交互策略存在着动作模式单一的问题，而社交反应测试中仿生机器鼠行为生成方式往往缺乏生物特性。
+%
+%首先，针对示教实验中动作模式单一的问题，本文根据生物鼠的动作特点，结合仿生机器鼠模型都结构特性，规划前进、后退、左转、右转、梳理、被梳理、攀爬和匍匐共8种基本动作，扩展其动作空间。
+%
+%其次，为模拟仿生机器鼠行为交互的相关现象，设计并搭建了用于开展仿生机器鼠行为交互的仿真平台，该平台分为关节控制、动作执行和行为生成三个层次，各层之间相互解耦，可扩展性强，具备模拟多机器鼠在实验场景中行为交互的能力。
+%
+%最后，针对传统方法生物特性不足的问题，本文引入强化学习的思想，利用Q-学习算法训练仿生机器鼠与设定的规则鼠在仿真平台中进行行为交互，使其适应规则鼠行为的随机性。经过训练后的仿生机器鼠能够适应规则鼠的行为模式，在仿真平台中习得生物鼠行为交互时的接近与跟随特性，产生与规则鼠匹配的动作序列，表现出与生物鼠相似的行为交互模式。
+
+%本文……。
+%
+%\textcolor{blue}{摘要正文选用模板中的样式所定义的“正文”，每段落首行缩进 2 个字符；或者手动设置成每段落首行缩进 2 个汉字，字体：宋体，字号：小四，行距：固定值 22 磅，间距：段前、段后均为 0 行。阅后删除此段。}
+%
+%\textcolor{blue}{摘要是一篇具有独立性和完整性的短文，应概括而扼要地反映出本论文的主要内容。包括研究目的、研究方法、研究结果和结论等，特别要突出研究结果和结论。中文摘要力求语言精炼准确，本科生毕业设计（论文）摘要建议 300-500 字。摘要中不可出现参考文献、图、表、化学结构式、非公知公用的符号和术语。英文摘要与中文摘要的内容应一致。阅后删除此段。}
+
+\vspace{4ex}\noindent\textbf{\heiti 关键词：仿生机器鼠；行为交互；强化学习；ROS}
+\newpage
+
+% 英文摘要章节
+\topskip=0pt
+
+\vspace*{2mm}
+
+\begin{spacing}{0.95}
+  \centering
+  \heiti\zihao{3}\textbf{\thesisTitleEN}
+\end{spacing}
+
+\vspace*{17mm}
+
+\addcontentsline{toc}{chapter}{Abstract}
+{\let\clearpage\relax \chapter*{
+  \zihao{-3}\textmd{Abstract}\vskip -3bp}}
+\setcounter{page}{2}
+
+\setstretch{1.53}
+\setlength{\parskip}{0em}
+% 英文摘要正文从这里开始
+%It is one of the hotspots in the field of intelligent robots and biology to take advantage of bionic robot to conduct social interaction test with living counterparts, which can help reveal behavior generation mechanisms in creatures and improve control strategies of bionic robot. Rats, as model animals, have been widely concerned by the researchers in robotic rat. Current strategies proposed by researchers to control the robotic rat in social interaction test generally are weak in interaction ability, continuance and adaptability.
+%
+%Aiming to overcome such weakness, I have made an action planning of the robotic rat, so that it can produce basic movements similar to the biological rat. A simulation system for robotic rat in social interaction test has been established, which is able to simulate the behavioral interaction of multi-robots in experimental scenarios. To solve the problem of uncontinuance and poor adaptability, Q-learning has been used to generate the action sequence of the robotic rat in social interaction test, and trained with the rule-based rat in the simulation system.
+%
+%As a result, Q-learning-based robotic rat is able adapt to the behavior of its partner, and shows a behavior interaction mode similar to that of the living rat in the simulation system. The continuance and adaptability of the control strategy have been improved.
+
+It is one of the hotspots in the field of intelligent robots and biology to take advantage of bionic robot interacting with living counterparts, revealing behavior mechanisms in creatures and improving control strategies of bionic robot. The robotic rat imitating the structural of the living rat, are capable of triggering specific reflex of the living rat. Thus interaction experiments between the two has attracted attention from researchers. At present, there are two typical areas: teaching and social reaction test. In the teaching, the control strategy are weak in action modes. In the social reaction test, the behavioral generation of the robotic rat generally lacks biological characteristics.
+
+First of all, according to the characteristics of the living rat and the structural of the robotic rat, a total of 8 basic movement planning methods of forward, backward, left turning, right turning, grooming, groomed, climbing and creeping were proposed, which extends action modes.
+
+Secondly, a simulation platform for simulating behavioral interaction between the robotic rat was established, which was divided into three layers: joint control layer, motion execution layer and behavior generation layer. Each layer, with strong scalability, decoupled from each other, were able to simulate behavioral interaction in experimental scenarios.
+
+Finally, in the simulation platform, the robotic rat controlled by reinforcement learning is defined as the learning rat, and the rule-controlled robotic rat as the rule rat. the learning rat was trained by the Q-learning to adapt to the behavior mode of the rule rat, generate the matching action sequence. As a result, this strategy simulated approaching and following characteristics in the interaction process, and enhanced the biological characteristics of the robotic rat.
+
+\vspace{3ex}\noindent\textbf{Key Words: Robotic Rat； Behavior Interaction； Reinforcement Learning； ROS}
+\newpage

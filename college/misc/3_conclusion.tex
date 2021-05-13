@@ -1,0 +1,67 @@
+%%
+% The BIThesis Template for Bachelor Graduation Thesis
+%
+% 北京理工大学毕业设计（论文）结论 —— 使用 XeLaTeX 编译
+%
+% Copyright 2020 Spencer Woo
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is Spencer Woo.
+%
+% Compile with: xelatex -> biber -> xelatex -> xelatex
+
+\unnumchapter{结~~~~论}
+\renewcommand{\thechapter}{结论}
+
+\ctexset{
+  section/number = \arabic{section}
+}
+
+% 结论部分尽量不使用 \subsection 二级标题，只使用 \section 一级标题
+
+% 这里插入一个参考文献，仅作参考
+本文根据现有研究和对生物鼠的动作分析，结合仿生机器鼠的结构特点，规划了前进、后退等8种仿生机器鼠基本动作。其中，模拟生物鼠四肢运动的动作为前进、后退、左转和右转4种，通过控制仿生机器鼠两个驱动轮的转动速度实现；模拟生物鼠躯干运动的动作为梳理、被梳理、攀爬和匍匐4种，通过控制仿生机器鼠各个关节位置实现。各基本动作在运动速度等指标上均表现出与生物鼠相近的特性。
+
+仿生机器鼠行为交互仿真平台基于ROS搭建，考虑该系统松耦合的特性，仿真平台分为关节控制、动作执行和行为生成三层。关节控制层负责将上层控制命令转化为仿真器Gazebo中的关节控制量，这些控制量包括对仿生机器鼠模型驱动轮关节的速度控制和躯干部分共7个关节的位置控制。该层利用的资源包括Gazebo仿真软件、ros\_control功能包和控制器管理器Controller Manager等。动作执行层接收行为生成层下发的动作序列命令，同时向关节控制层发送各关节的轨迹等控制命令。该层将关节控制层提供的多个关节控制器划分为两个部分，驱动轮接口负责接收与仿生机器鼠位置移动有关的动作命令，并控制两轮以合适的速度运行；躯干运动接口利用moveit功能包对躯干部份的7个关节进行整体控制。行为生成层根据现有的对生物鼠行为模式的研究设计，分为行为决策和动作执行两个步骤。在进行行为决策时，控制程序根据已知的机器鼠行为概率统计决定此时的行为，执行这一行为包含的动作时，行为生成层利用当前状态等信息生成动作序列。
+
+基于强化学习的仿生机器鼠行为控制方法考虑机器鼠在行为交互时的实际情况，设定了四种行为模式作为机器鼠学习的目标。参考现有对生物鼠行为交互的研究标准，确定以机器鼠间的角度和距离作为强化学习中状态分类的原则，据此划分了背后、左侧、右侧、远距、梳理、被梳理、攀爬、匍匐和其他共9种状态。采用$\epsilon-greedy$策略作为强化学习系统的动作选择策略。经过一定时长的训练，这一机制控制的仿生机器鼠能够在仿真平台中与预设规则的机器鼠开展有效交互。随着训练的进行，二者的活动区域逐渐接近，并在有效距离内进行了一系列与生物鼠相似的行为交互。
+
+本研究的创新点包括：
+\begin{enumerate}[leftmargin=0em, listparindent=2em, parsep=0em, topsep=0em, label=（\theenumi）]
+%\setlength{\leftmargin}{0em}
+\setlength{\itemindent}{4em}
+\setlength{\labelsep}{0em}
+\setlength{\labelwidth}{2em}
+\setlength{\parsep}{0em}
+\setlength{\itemsep}{0em}
+\setlength{\topsep}{0em}
+%\setlength{\listparindent}{2em}
+  \item 根据生物鼠动作特点及仿生机器鼠结构特性，提出了前进、后退、左转、右转、梳理、被梳理、攀爬和匍匐共 8 种基本动作的规划方法，能够快速执行各种仿鼠动作，并在仿生机器鼠行为交互仿真平台中进行了实现，提升了仿生机器鼠产生仿鼠动作的能力。
+  \item 在仿生机器鼠行为交互中应用Q-学习算法，部分解决了传统策略存在的可重复性差、持续时间较短等不足，能够适应生物鼠行为的快速性、个体差异及其对环境渐进适应的特性，增强了仿生机器鼠行为生成的生物特性。
+\end{enumerate}
+
+本研究的应用前景包括：
+\begin{enumerate}[leftmargin=0em, listparindent=2em, parsep=0em, topsep=0em, label=（\theenumi）]
+%\setlength{\leftmargin}{0em}
+\setlength{\itemindent}{4em}
+\setlength{\labelsep}{0em}
+\setlength{\labelwidth}{2em}
+\setlength{\parsep}{0em}
+\setlength{\itemsep}{0em}
+\setlength{\topsep}{0em}
+%\setlength{\listparindent}{2em}
+  \item 仿真系统中训练收敛的控制策略可以应用到机器鼠与生物鼠的行为交互实验中，探索生物鼠的行为模式。
+  \item 进一步完善仿真系统行为生成机制，为其他生物鼠与机器鼠行为交互研究提供前期验证平台。
+\end{enumerate}
+%\textcolor{blue}{结论作为毕业设计（论文）正文的最后部分单独排写，但不加章号。结论是对整个论文主要结果的总结。在结论中应明确指出本研究的创新点，对其应用前景和社会、经济价值等加以预测和评价，并指出今后进一步在本研究方向进行研究工作的展望与设想。结论部分的撰写应简明扼要，突出创新性。阅后删除此段。}
+%
+%\textcolor{blue}{结论正文样式与文章正文相同：宋体、小四；行距：22 磅；间距段前段后均为 0 行。阅后删除此段。}

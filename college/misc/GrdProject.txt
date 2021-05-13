@@ -1,0 +1,8 @@
+﻿@misc{RN1,
+   pages = {2397-2402},
+   ISBN = {978-1-5386-2682-5},
+   url = {<Go to ISI>://WOS:000426978202078},
+   year = {2017},
+   type = {Conference Paper}
+}
+
